@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Film Finder</title>
+    <link rel="icon" type="image/x-icon" href="./images/filmfinder-favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400&family=Fredoka+One&family=Questrial&family=Staatliches&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <script defer src="https://kit.fontawesome.com/e918d10e90.js" crossorigin="anonymous"></script>
+    <script defer src="helpers.js"></script>
+    <script defer src="script.js"></script>
+</head>
+
+<body>
+    <header>
+        <img class="logo" src="./images/filmfinder-logo.svg">
+        <ul>
+            <li id='aboutlink'><a>About</a></li>
+        </ul>
+    </header>
+    <form id="genreForm">
+        <label>Choose a genre:</label>
+        <select name="genres" id="genres">
+        </select>
+    </form>
+    <button id="playBtn">Find a film</button>
+    <div id="movieInfo">
+        <div id="moviePoster"></div>
+        <div id="movieText"></div>
+    </div>
+    <section id="about">
+        <p><strong>Instructions:</strong> Pick a genre from the drop-down menu, then click the button to find a film. Click the button again to find another film.</p>
+        <p>Each film is pulled at random from <a href="https://www.themoviedb.org/" target="_blank">The Movie Database</a> via their free API.</p>
+        <p>This version of Film Finder is created by <a href="https://benhatch.com/" target="_blank">Ben Hatch</a>. The original project and base code comes from Codecademy's <a href="https://join.codecademy.com/learn/paths/full-stack-engineer-career-path-b/" target="_blank">Full-Stack Engineer Path</a>.</p>
+    </section>
+</body>
+
+</html>

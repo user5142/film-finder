@@ -1,0 +1,318 @@
+/* Universal */
+
+body {
+    background-color: #27374D;
+    color: #0a0408;
+    margin: 0;
+    overflow-y: scroll;
+}
+
+h1 {
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+p {
+    display: block;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+a:hover {
+    cursor: pointer;
+    text-decoration: none;
+    opacity: .75;
+}
+
+/* Header */
+
+header {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 5.5rem;
+    width: 55rem;
+    margin: 0 auto;
+    /*max-width: 100%;*/
+    /*padding: 0 10rem;*/
+}
+
+.logo {
+    width: 11rem;
+}
+
+.logo:hover {
+    opacity: .75;
+    cursor: pointer;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+ul li a {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #DDE6ED;
+    text-decoration: none;
+}
+
+@media only screen and (max-width: 1100px) {
+    header {
+        width: auto;
+        padding: 0 2rem;
+    }
+}
+
+/* Main */
+
+#genreForm,
+#playBtn {
+    text-align: center;
+    margin: 0px auto;
+    display: block;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+button:active {
+    opacity: .7;
+}
+
+#genreForm label {
+    padding-bottom: .4rem;
+}
+
+#movieInfo {
+    display: flex;
+    flex-flow: row;
+    width: 55rem;
+    margin: 32px auto;
+}
+
+#movieInfo:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+#moviePoster {
+    width: 22.5rem;
+}
+
+#movieText {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #DDE6ED;
+    line-height: 1.25;
+    width: 32.5rem;
+}
+
+#movieTitle {
+    padding: 0 0 32px 50px;
+}
+
+#movieTagline {
+    padding: 0 0 32px 50px;
+    font-size: 1.2rem;
+    font-style: italic;
+}
+
+
+#movieOverview {
+    padding: 0 0 32px 50px;
+    line-height: 1.35;
+}
+
+#movieRuntime,
+#movieBudget,
+#movieRevenue {
+    padding: 0 0 15px 50px;
+    line-height: 1.35;
+}
+
+#playBtn {
+    margin-top: 20px;
+    margin-bottom: 70px;
+    font-size: 15px;
+    padding: 7px 40px;
+    border-radius: 10px;
+    border-style: none;
+    background-color: #526D82;
+    color: #DDE6ED;
+    cursor: pointer;
+}
+
+label {
+    display: block;
+    font-size: 20px;
+    margin-bottom: 5px;
+    color: #DDE6ED;
+}
+
+select {
+    width: 200px;
+    height: auto;
+}
+
+#about {
+    display: flex;
+    flex-flow: column;
+    gap: 2rem;
+    width: 55rem;
+    margin: 0 auto;
+}
+
+#about p {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #DDE6ED;
+    line-height: 1.25;
+}
+
+#about a {
+    color: #90cea1;
+}
+
+@media only screen and (max-width: 1100px) {
+    #movieTitle {
+        padding: 0 0 25px 40px;
+        font-size: 1.5rem;
+    }
+
+    #movieTagline {
+        padding: 0 0 25px 40px;
+        font-size: 1.1rem;
+        font-style: italic;
+    }
+
+    #movieOverview {
+        padding: 0 0 25px 40px;
+        line-height: 1.35;
+    }
+
+    #movieRuntime,
+    #movieBudget,
+    #movieRevenue {
+        padding: 0 0 15px 40px;
+        line-height: 1.35;
+    }
+
+    #movieInfo {
+        width: auto;
+        padding: 0 2rem;
+        margin: 32px auto;
+    }
+
+    #moviePoster {
+        width: 20rem;
+    }
+
+    #movieText {
+        width: auto;
+    }
+
+    #about {
+        width: auto;
+        padding: 0 2rem;
+    }
+}
+
+@media only screen and (max-width: 725px) {
+    #movieTitle {
+        font-size: 1.5rem;
+    }
+
+    #movieInfo {
+        width: auto;
+        padding: 0 2rem;
+        margin: 32px auto;
+    }
+
+    #moviePoster {
+        width: 15rem;
+    }
+
+    #movieText,
+    #movieStats {
+        width: auto;
+    }
+}
+
+@media only screen and (max-width: 725px) {
+    #playBtn {
+        margin-bottom: 40px;
+    }
+
+    #movieInfo {
+        flex-flow: column;
+        align-items: center;
+        width: auto;
+        padding: 0;
+        margin: 32px auto;
+    }
+
+    div #moviePoster {
+        width: 25rem;
+    }
+
+    #movieText {
+        line-height: 1.25;
+        width: 25rem;
+        padding: 1.5rem 0 0 0;
+    }
+
+    #movieTitle,
+    #movieTagline,
+    #movieOverview,
+    #movieRuntime,
+    #movieBudget,
+    #movieRevenue {
+        padding: 0 0 15px 0;
+        line-height: 1.35;
+    }
+}
+
+@media only screen and (max-width: 475px) {
+    #playBtn {
+        margin-bottom: 40px;
+    }
+
+    #movieInfo {
+        flex-flow: column;
+        align-items: center;
+        width: auto;
+        padding: 0 2rem;
+        margin: 32px auto;
+    }
+
+    div #moviePoster {
+        width: 100%;
+    }
+
+    #movieText {
+        line-height: 1.25;
+        width: 100%;
+        padding: 1.5rem 0 0 0;
+    }
+
+    #movieTitle,
+    #movieTagline,
+    #movieOverview,
+    #movieRuntime,
+    #movieBudget,
+    #movieRevenue {
+        padding: 0 0 15px 0;
+        line-height: 1.35;
+    }
+}
