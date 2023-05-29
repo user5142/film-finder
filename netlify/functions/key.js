@@ -1,7 +1,7 @@
-const key = require('key');
-key.config();
+const dotenv = require('dotenv');
+dotenv.config();
 
-exports.handler = async (event, context) => {
+export async function handler(event, context) {
   const apiKey = process.env.API_KEY;
   return apiKey;  
-};
+}
