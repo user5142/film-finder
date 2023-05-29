@@ -1,4 +1,9 @@
-const tmdbKey = "SECRET";
+const tmdbKey = fetch('/.netlify/functions/key', {
+    method: 'GET',
+})
+    .then(key => {
+        return key;
+    });
 const tmdbBaseUrl = "https://api.themoviedb.org/3";
 const playBtn = document.getElementById("playBtn");
 const aboutlink = document.getElementById('aboutlink');
