@@ -3,6 +3,8 @@ const tmdbBaseUrl = "https://api.themoviedb.org/3";
 const playBtn = document.getElementById("playBtn");
 const aboutlink = document.getElementById('aboutlink');
 
+// fetch('/.netlify/functions/secret?with_genres="drama"&page="441")
+
 const getGenres = async () => {
     const genreRequestEndpoint = "/genre/movie/list";
     const requestParams = `?api_key=${tmdbKey}`;
