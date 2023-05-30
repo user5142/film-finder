@@ -18,6 +18,10 @@
 </head>
 
 <body>
+    <script>
+        fetch('/.netlify/functions/secret')
+        .then(response => {console.log(response.json())})
+    </script>
     <header>
         <img class="logo" src="./images/filmfinder-logo.svg">
         <ul>
