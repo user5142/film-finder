@@ -90,7 +90,7 @@ button:active {
 }
 
 #genreForm label {
-    padding-bottom: .4rem;
+    padding: .4rem 0 .4rem 0;
 }
 
 #movieInfo {
@@ -136,7 +136,7 @@ button:active {
 
 #playBtn {
     margin-top: 15px;
-    margin-bottom: 70px;
+    margin-bottom: 50px;
     font-size: 15px;
     padding: 7px 40px;
     border-radius: 10px;
@@ -277,7 +277,7 @@ select {
 
 @media only screen and (max-width: 475px) {
     #playBtn {
-        margin-bottom: 40px;
+        margin-bottom: 20px;
     }
 
     #movieInfo {
