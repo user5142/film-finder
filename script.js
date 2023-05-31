@@ -1,5 +1,5 @@
-const tmdbKey = 'SECRET'
-const tmdbBaseUrl = "https://api.themoviedb.org/3";
+// const tmdbKey = 'SECRET'
+// const tmdbBaseUrl = "https://api.themoviedb.org/3";
 const playBtn = document.getElementById("playBtn");
 const aboutlink = document.getElementById('aboutlink');
 
@@ -17,13 +17,10 @@ const getGenres = async () => {
 };
 
 const getMovies = async () => {
-    /*const randomPage = Math.floor(Math.random() * 500);
     const selectedGenre = getSelectedGenre();
-    const discoverMovieEndpoint = "/discover/movie";
-    const requestParams = `?api_key=${tmdbKey}&with_genres=${selectedGenre}&page=${randomPage}`;
-    const urlToFetch = `${tmdbBaseUrl}${discoverMovieEndpoint}${requestParams}`;*/
+
     try {
-        const response = await fetch('/.netlify/functions/movies');
+        const response = await fetch(`/.netlify/functions/${selectedGenre}`);
         if (response.ok) {
             const jsonResponse = await response.json();
             const movies = jsonResponse.results;
