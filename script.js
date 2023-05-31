@@ -3,14 +3,9 @@ const tmdbBaseUrl = "https://api.themoviedb.org/3";
 const playBtn = document.getElementById("playBtn");
 const aboutlink = document.getElementById('aboutlink');
 
-// fetch('/.netlify/functions/secret?with_genres="drama"&page="441")
-
 const getGenres = async () => {
-    const genreRequestEndpoint = "/genre/movie/list";
-    const requestParams = `?api_key=${tmdbKey}`;
-    const urlToFetch = `${tmdbBaseUrl}${genreRequestEndpoint}${requestParams}`;
     try {
-        const response = await fetch(urlToFetch);
+        const response = await fetch('/.netlify/functions/genres');
         if (response.ok) {
             const jsonResponse = await response.json();
             const genres = jsonResponse.genres;
@@ -22,16 +17,17 @@ const getGenres = async () => {
 };
 
 const getMovies = async () => {
-    const randomPage = Math.floor(Math.random() * 500);
+    /*const randomPage = Math.floor(Math.random() * 500);
     const selectedGenre = getSelectedGenre();
     const discoverMovieEndpoint = "/discover/movie";
     const requestParams = `?api_key=${tmdbKey}&with_genres=${selectedGenre}&page=${randomPage}`;
-    const urlToFetch = `${tmdbBaseUrl}${discoverMovieEndpoint}${requestParams}`;
+    const urlToFetch = `${tmdbBaseUrl}${discoverMovieEndpoint}${requestParams}`;*/
     try {
-        const response = await fetch(urlToFetch);
+        const response = await fetch('/.netlify/functions/movies');
         if (response.ok) {
             const jsonResponse = await response.json();
             const movies = jsonResponse.results;
+            console.log(movies);
             return movies;
         }
     } catch (error) {

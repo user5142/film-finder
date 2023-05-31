@@ -103,7 +103,7 @@ const createMovieRevenue = (revenue) => {
     return revenueText;
 }
 
-// Returns a random movie from the first page of movies
+// Returns a random movie from the randomly selected page of movies
 const getRandomMovie = (movies) => {
     const randomIndex = Math.floor(Math.random() * movies.length);
     const randomMovie = movies[randomIndex];

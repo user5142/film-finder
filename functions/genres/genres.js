@@ -1,17 +1,29 @@
-// Docs on event and context https://docs.netlify.com/functions/build/#code-your-function-2
+const axios = require('axios')
+
+const tmdbBaseUrl = "https://api.themoviedb.org/3";
+const tmdbKey = process.env.tmdbKey
+
 const handler = async (event) => {
+  const genreRequestEndpoint = "/genre/movie/list";
+  const requestParams = `?api_key=${tmdbKey}`;
+  const urlToFetch = `${tmdbBaseUrl}${genreRequestEndpoint}${requestParams}`;
+
   try {
-    const subject = event.queryStringParameters.name || 'World'
+    const { data } = await axios.get(urlToFetch);
+
     return {
       statusCode: 200,
-      body: JSON.stringify({ message: `Hello ${subject}` }),
-      // // more keys you can return:
-      // headers: { "headerName": "headerValue", ... },
-      // isBase64Encoded: true,
+      body: JSON.stringify(data)
     }
+
   } catch (error) {
-    return { statusCode: 500, body: error.toString() }
+    const { status, statusText, headers, data } = error.response
+    return {
+      statusCode: status,
+      body: JSON.stringify({ status, statusText, headers, data })
+    }
   }
+
 }
 
 module.exports = { handler }
