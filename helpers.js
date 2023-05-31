@@ -73,7 +73,7 @@ const createMovieOverview = (overview) => {
     return overviewParagraph;
 };
 
-// Create HTML for movie stats
+// Create HTML for movie runtime
 const createMovieRuntime = (runtime) => {
     const runtimeText = document.createElement('p');
     runtimeText.setAttribute('id', 'movieRuntime');
@@ -101,13 +101,6 @@ const createMovieRevenue = (revenue) => {
 
     return revenueText;
 }
-
-// Returns a random movie from the randomly selected page of movies
-/*const getRandomMovie = (movies) => {
-    const randomIndex = Math.floor(Math.random() * movies.length);
-    const randomMovie = movies[randomIndex];
-    return randomMovie;
-};*/
 
 // Uses the DOM to create HTML to display the movie
 const displayMovie = (info) => {
