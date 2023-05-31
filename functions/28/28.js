@@ -12,19 +12,17 @@ const handler = async (event) => {
     const urlToFetch = `${tmdbBaseUrl}${discoverMovieEndpoint}${requestParams}`;
 
     try {
-        const { data } = await axios.get(urlToFetch)
+        const { data } = await axios.get(urlToFetch);
 
-        const randomMovieId = Math.floor(Math.random() * data.results.length);
+        const randomMovieIndex = Math.floor(Math.random() * data.results.length);
+        const randomMovieId = data.results[randomMovieIndex].id;
         const movieInfoUrl = `${tmdbBaseUrl}/movie/${randomMovieId}${requestParams}`;
 
-        const { data: movieInfo } = await axios.get(movieInfoUrl);  
+        const { data: movieInfo } = await axios.get(movieInfoUrl);
 
         return {
             statusCode: 200,
-            body: JSON.stringify({
-                data,
-                movieInfo,
-            })
+            body: JSON.stringify({ movieInfo })
         }
 
     } catch (error) {

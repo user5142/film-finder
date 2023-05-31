@@ -51,6 +51,8 @@ const createMoviePoster = (posterPath) => {
 const createMovieTitle = (title, date) => {
     const titleHeader = document.createElement('h1');
     titleHeader.setAttribute('id', 'movieTitle');
+    console.log(title);
+    console.log(date);
     titleHeader.innerHTML = title + ` (${date.substring(0, 4)})`;
 
     return titleHeader;
@@ -104,11 +106,11 @@ const createMovieRevenue = (revenue) => {
 }
 
 // Returns a random movie from the randomly selected page of movies
-const getRandomMovie = (movies) => {
+/*const getRandomMovie = (movies) => {
     const randomIndex = Math.floor(Math.random() * movies.length);
     const randomMovie = movies[randomIndex];
     return randomMovie;
-};
+};*/
 
 // Uses the DOM to create HTML to display the movie
 const displayMovie = (movieInfo) => {

@@ -1,5 +1,3 @@
-// const tmdbKey = 'SECRET'
-// const tmdbBaseUrl = "https://api.themoviedb.org/3";
 const playBtn = document.getElementById("playBtn");
 const aboutlink = document.getElementById('aboutlink');
 
@@ -16,7 +14,21 @@ const getGenres = async () => {
     }
 };
 
-const getMovies = async () => {
+const getMovieInfo = async () => {
+    const selectedGenre = getSelectedGenre();
+
+    try {
+        const response = await fetch(`/.netlify/functions/${selectedGenre}`);
+        if (response.ok) {
+            const movieInfo = await response.json();
+            return movieInfo;
+        }
+    } catch (error) {
+        console.log(error);
+    }
+};
+
+/*const getMovies = async () => {
     const selectedGenre = getSelectedGenre();
 
     try {
@@ -47,7 +59,7 @@ const getMovieInfo = async (movie) => {
     } catch (error) {
         console.log(error);
     }
-};
+};*/
 
 // Gets a list of movies from a random page between 1 and 500 and displays the info of a random movie from the random page
 const showRandomMovie = async () => {
@@ -55,10 +67,11 @@ const showRandomMovie = async () => {
     if (movieInfo.childNodes.length > 0) {
         hideAboutSection();
         clearCurrentMovie();
-        const movies = await getMovies();
-        const randomMovie = getRandomMovie(movies);
-        const info = await getMovieInfo(randomMovie);
-        displayMovie(info);
+        /* const movies = await getMovies();
+        const randomMovie = getRandomMovie(movies);*/
+        const movieInfo = await getMovieInfo();
+        console.log(movieInfo);
+        displayMovie(movieInfo);
     }
 };
 
