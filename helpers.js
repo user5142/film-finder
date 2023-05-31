@@ -43,7 +43,6 @@ const createMoviePoster = (posterPath) => {
     const posterImg = document.createElement('img');
     posterImg.setAttribute('src', moviePosterUrl);
     posterImg.setAttribute('id', 'moviePoster');
-
     return posterImg;
 };
 
@@ -51,8 +50,6 @@ const createMoviePoster = (posterPath) => {
 const createMovieTitle = (title, date) => {
     const titleHeader = document.createElement('h1');
     titleHeader.setAttribute('id', 'movieTitle');
-    console.log(title);
-    console.log(date);
     titleHeader.innerHTML = title + ` (${date.substring(0, 4)})`;
 
     return titleHeader;
@@ -113,30 +110,30 @@ const createMovieRevenue = (revenue) => {
 };*/
 
 // Uses the DOM to create HTML to display the movie
-const displayMovie = (movieInfo) => {
+const displayMovie = (info) => {
     const moviePosterDiv = document.getElementById('moviePoster');
     const movieTextDiv = document.getElementById('movieText');
 
     // Create HTML content containing movie info
-    const moviePoster = createMoviePoster(movieInfo.poster_path);
-    const titleHeader = createMovieTitle(movieInfo.title, movieInfo.release_date);
-    const taglineText = createMovieTagline(movieInfo.tagline);
-    const overviewText = createMovieOverview(movieInfo.overview);
-    const runtimeText = createMovieRuntime(movieInfo.runtime);
-    const budgetText = createMovieBudget(movieInfo.budget);
-    const revenueText = createMovieRevenue(movieInfo.revenue)
+    const moviePoster = createMoviePoster(info.movieInfo.poster_path);
+    const titleHeader = createMovieTitle(info.movieInfo.title, info.movieInfo.release_date);
+    const taglineText = createMovieTagline(info.movieInfo.tagline);
+    const overviewText = createMovieOverview(info.movieInfo.overview);
+    const runtimeText = createMovieRuntime(info.movieInfo.runtime);
+    const budgetText = createMovieBudget(info.movieInfo.budget);
+    const revenueText = createMovieRevenue(info.movieInfo.revenue)
 
     // Append poster, title, tagline and overview to page
     moviePosterDiv.appendChild(moviePoster);
     movieTextDiv.appendChild(titleHeader);
-    if (movieInfo.tagline != "") {
+    if (info.movieInfo.tagline != "") {
         movieTextDiv.appendChild(taglineText);
     }
     movieTextDiv.appendChild(overviewText);
-    if (movieInfo.runtime != '0') {
+    if (info.movieInfo.runtime != '0') {
         movieTextDiv.appendChild(runtimeText);
     }
-    if (movieInfo.budget != '0' && movieInfo.revenue != '0') {
+    if (info.movieInfo.budget != '0' && info.movieInfo.revenue != '0') {
         movieTextDiv.appendChild(budgetText);
         movieTextDiv.appendChild(revenueText);
     }
