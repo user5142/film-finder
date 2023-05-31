@@ -38,7 +38,7 @@ header {
     flex-flow: row;
     justify-content: space-between;
     align-items: center;
-    height: 5.5rem;
+    height: 4rem;
     width: 55rem;
     margin: 0 auto;
 }
@@ -100,12 +100,6 @@ button:active {
     margin: 32px auto;
 }
 
-#movieInfo:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
 #moviePoster {
     width: 22.5rem;
 }
@@ -141,7 +135,7 @@ button:active {
 }
 
 #playBtn {
-    margin-top: 20px;
+    margin-top: 15px;
     margin-bottom: 70px;
     font-size: 15px;
     padding: 7px 40px;
