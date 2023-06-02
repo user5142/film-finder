@@ -63,6 +63,12 @@ ul li a {
     text-decoration: none;
 }
 
+@media only screen and (min-width: 1600px) {
+    header {
+        height: 7rem;
+    }
+}
+
 @media only screen and (max-width: 1100px) {
     header {
         width: auto;
@@ -175,6 +181,14 @@ select {
 #about a {
     color: #90cea1;
 }
+
+@media only screen and (min-width: 1600px) {
+    #playBtn {
+        margin-top: 15px;
+        margin-bottom: 80px;
+    }
+}
+
 
 @media only screen and (max-width: 1100px) {
     #movieTitle {
