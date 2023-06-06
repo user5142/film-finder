@@ -50,7 +50,11 @@ const createMoviePoster = (posterPath) => {
 const createMovieTitle = (title, date) => {
     const titleHeader = document.createElement('h1');
     titleHeader.setAttribute('id', 'movieTitle');
-    titleHeader.innerHTML = title + ` (${date.substring(0, 4)})`;
+    if (date != '') {
+        titleHeader.innerHTML = title + ` (${date.substring(0, 4)})`;
+    } else {
+        titleHeader.innerHTML = title;
+    }
 
     return titleHeader;
 };
