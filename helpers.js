@@ -39,11 +39,18 @@ const clearCurrentMovie = () => {
 
 // Create HTML for movie poster
 const createMoviePoster = (posterPath) => {
-    const moviePosterUrl = `https://image.tmdb.org/t/p/original/${posterPath}`;
-    const posterImg = document.createElement('img');
-    posterImg.setAttribute('src', moviePosterUrl);
-    posterImg.setAttribute('id', 'moviePoster');
-    return posterImg;
+    if (posterPath === null) {
+        const altMoviePoster = document.createElement('img');
+        altMoviePoster.setAttribute('src', "images/movie-poster-unavailable.png");
+        altMoviePoster.setAttribute('id', 'moviePoster');
+        return altMoviePoster;
+    } else {
+        const moviePosterUrl = `https://image.tmdb.org/t/p/original/${posterPath}`;
+        const posterImg = document.createElement('img');
+        posterImg.setAttribute('src', moviePosterUrl);
+        posterImg.setAttribute('id', 'moviePoster');
+        return posterImg;
+    }
 };
 
 // Create HTML for movie title
